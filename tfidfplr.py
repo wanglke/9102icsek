@@ -16,8 +16,8 @@ def tokenizer(text):
 def loadfile():
     # neg = pd.read_excel('../data/neg.xls', sheet_name=0, header=None, index=None)
     # pos = pd.read_excel('../data/pos.xls', sheet_name=0, header=None, index=None)
-    train_data = pd.read_csv('data/train.csv', delimiter=',', low_memory=False, lineterminator="\n")
-    test = pd.read_csv('data/20190513_test.csv', delimiter=',', low_memory=False, lineterminator="\n")
+    train_data = pd.read_csv('train.csv', delimiter=',', low_memory=False, lineterminator="\n")
+    test = pd.read_csv('20190513_test.csv', delimiter=',', low_memory=False, lineterminator="\n")
     y = list(train_data.label)
     a = []
     for i in y:
@@ -85,7 +85,7 @@ def train():
         'Pred': predicts
     })
     result
-    result.to_csv('./submitL.csv', index=False)
+    result.to_csv('submitL.csv', index=False)
     print("Done!")
 
 
@@ -93,4 +93,4 @@ def train():
 
 if __name__ == '__main__':
     train()
-    test1 = pd.read_csv('data/20190513_test.csv', delimiter=',', low_memory=False, lineterminator="\n")
+    test1 = pd.read_csv('20190513_test.csv', delimiter=',', low_memory=False, lineterminator="\n")
